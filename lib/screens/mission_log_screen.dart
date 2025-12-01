@@ -1,6 +1,7 @@
 import 'package:bravebit_flutter/widgets/glass_card.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:bravebit_flutter/utils/haptics.dart';
 
 class MissionLogScreen extends StatefulWidget {
   const MissionLogScreen({super.key});
@@ -58,7 +59,9 @@ class _MissionLogScreenState extends State<MissionLogScreen> {
         unselectedItemColor: Colors.grey,
         currentIndex: 1,
         onTap: (index) {
-          // Navigate back to home or profile
+          triggerHapticFeedback();
+          if (index == 0) Navigator.pushReplacementNamed(context, '/home');
+          if (index == 2) Navigator.pushReplacementNamed(context, '/profile');
         },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),

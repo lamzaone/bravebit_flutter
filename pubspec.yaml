@@ -17,6 +17,7 @@ dependencies:
   shared_preferences: ^2.3.2 # For local storage if needed
   google_fonts: ^6.2.1 # If Satoshi not available, fallback
   rive: ^0.13.12
+  onesignal_flutter: ^5.3.4
 
 dev_dependencies:
   flutter_test:
